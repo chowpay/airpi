@@ -1,16 +1,18 @@
+#Kaho Chan
+#Modified script from https://www.raspberrypi.org/blog/monitor-air-quality-with-a-raspberry-pi/
+#11/03/2020
+
 import sys
 print(sys.path)
 sys.path.append("/home/pi/scripts/airpi/venv38/lib/python3.8/site-packages")
 import yaml
-import backoff
 import serial
 import time
 from Adafruit_IO import Client
 
-
 #Load yaml configuration file
 try:
-    with open('config.yml') as f:
+    with open('/home/pi/scripts/airpi/config.yml') as f:
         #Keys : ['username', 'password', ]
         yaml_data = yaml.load(f,Loader=yaml.FullLoader)
 except Exception as e :
