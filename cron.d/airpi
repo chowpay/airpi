@@ -1,0 +1,5 @@
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+#26 * * * * pi /home/pi/pynest/bin/python /home/pi/airpi/airpi.py  >> /home/pi/airpi/logs/`date +\%Y\%m\%d\%H\%M`_airpi.txt 2>&1 &
+@reboot pi /home/pi/scripts/airpi/venv38/bin/python /home/pi/scripts/airpi/airpi.py  >> /home/pi/scripts/airpi/logs/`date +\%Y\%m\%d\%H\%M`_airpi.txt 2>&1 &
