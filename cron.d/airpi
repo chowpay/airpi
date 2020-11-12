@@ -1,6 +1,6 @@
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
-@reboot pi sleep 60 && /home/pi/scripts/airpi/venv38/bin/python /home/pi/scripts/airpi/airpi.py >> /home/pi/scripts/airpi/logs/`date +\%Y\%m\%d\%H\%M`_airpi.txt 2>&1 &
+@reboot pi sleep 120 && /home/pi/scripts/airpi/venv38/bin/python /home/pi/scripts/airpi/airpi.py >> /home/pi/scripts/airpi/logs/`date +\%Y\%m\%d\%H\%M`_airpi.txt 2>&1 &
 #@reboot sleep 60; pi /home/pi/scripts/airpi/venv38/bin/python /home/pi/scripts/airpi/airpi.py  >> /home/pi/scripts/airpi/logs/`date +\%Y\%m\%d\%H\%M`_airpi.txt 2>&1 &
 #32 * * * * pi /home/pi/scripts/airpi/venv38/bin/python /home/pi/scripts/airpi/airpi.py  >> /home/pi/scripts/airpi/logs/`date +\%Y\%m\%d\%H\%M`_airpi.txt 2>&1 &
