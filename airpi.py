@@ -51,15 +51,19 @@ aio = Client(username,password)
 ser = serial.Serial('/dev/ttyUSB0')
 
 while True:
-    data = []
-    for index in range(0,10):
-        datum = ser.read()
-        data.append(datum)
+    try:
+        data = []
+        for index in range(0,10):
+            datum = ser.read()
+            data.append(datum)
 
-    pmtwofive = int.from_bytes(b''.join(data[2:4]),byteorder = 'little') / 10
-    aio.send('kingswoodtwofive', pmtwofive)
-    pmten = int.from_bytes(b''.join(data[4:6]),byteorder = 'little') / 10
-    aio.send('kingswoodten', pmten)
-    display('PM2.5 = {0}\nPM10 = {1}'.format(pmtwofive,pmten))
-    time.sleep(10)
+        pmtwofive = int.from_bytes(b''.join(data[2:4]),byteorder = 'little') / 10
+        aio.send('kingswoodtwofive', pmtwofive)
+        pmten = int.from_bytes(b''.join(data[4:6]),byteorder = 'little') / 10
+        aio.send('kingswoodten', pmten)
+        display('PM2.5 = {0}\nPM10 = {1}'.format(pmtwofive,pmten))
+        time.sleep(10)
+    except:
+        print("issue connecting")
+
 
